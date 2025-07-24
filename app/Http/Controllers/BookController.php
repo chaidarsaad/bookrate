@@ -81,14 +81,22 @@ class BookController extends Controller
         ]);
     }
 
-    public function topAuthors()
+    public function topAuthors(Request $request)
     {
-        $authors = DB::table('authors')
+        $search = $request->input('search.value');
+
+        $query = DB::table('authors')
             ->join('books', 'books.author_id', '=', 'authors.id')
             ->join('ratings', 'ratings.book_id', '=', 'books.id')
             ->where('ratings.score', '>', 5)
             ->select('authors.id', 'authors.name', DB::raw('COUNT(ratings.id) as voter_count'))
-            ->groupBy('authors.id', 'authors.name')
+            ->groupBy('authors.id', 'authors.name');
+
+        if ($search) {
+            $query->having('authors.name', 'like', '%' . $search . '%');
+        }
+
+        $authors = $query
             ->orderByDesc('voter_count')
             ->limit(10)
             ->get();
@@ -97,4 +105,5 @@ class BookController extends Controller
             'data' => $authors,
         ]);
     }
+
 }

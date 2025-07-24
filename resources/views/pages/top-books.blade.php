@@ -59,11 +59,13 @@
                         }
                     }, {
                         data: 'name',
-                        name: 'name'
+                        name: 'name',
+                        orderable: false,
                     },
                     {
                         data: 'voter_count',
-                        name: 'voter_count'
+                        name: 'voter_count',
+                        orderable: false,
                     }
                 ],
                 order: [
