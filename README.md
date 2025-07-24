@@ -44,3 +44,7 @@ php artisan migrate --seed
 
 php artisan serve
 ```
+
+🌐 Live Demo
+This project is deployed online.
+👉 Try it here: https://bookrate.genzproject.my.id
