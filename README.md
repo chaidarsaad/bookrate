@@ -30,7 +30,7 @@ A simple Laravel application to manage books, authors, and user-submitted rating
 
 ```bash
 git clone https://github.com/chaidarsaad/bookrate.git
-cd laravel-book-rating
+cd bookrate
 composer install
 cp .env.example .env
 php artisan key:generate
