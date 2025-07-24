@@ -28,8 +28,6 @@ A simple Laravel application to manage books, authors, and user-submitted rating
 
 ## 🚀 Setup Instructions
 
-### 1. Clone the project
-
 ```bash
 git clone https://github.com/chaidarsaad/bookrate.git
 cd laravel-book-rating
